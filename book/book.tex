@@ -59,11 +59,17 @@
 \usepackage{listings} 
 \usepackage{url}
 \frenchspacing
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
 \makeindex
 \pagestyle{plain}
 \newcommand{\Oh}[0]{ \mathcal{O} }
 \newcommand{\lang}[1]{{\index{#1}\emph{#1}}}
 \setcounter{tocdepth}{1}
+\usepackage{titlesec}
+\titlespacing*{\chapter}{0pt}{-50pt}{20pt}
+\titleformat{\chapter}[display]{\huge}{\thechapter}{20pt}{\Huge}
+
 
 \title{Udvikling af apps til web og mobiltelefoner}
 
@@ -88,7 +94,7 @@
 
 \tableofcontents
 
-\chapter{Introduktion}
+\chapter*{Introduktion}
 
 Denne bog er en introduktion til programmering, og hvordan man kan lave programmer til web og mobiltelefoner.
 
@@ -104,9 +110,9 @@ Prøv at byg videre og ændre i programmerne, så de opføre sig anderledes,
 eksperimentér, leg og skab. 
 
 
-\chapter{Programmering og grafik}
+\chapter*{Programmering og grafik}
 
-\section{Kald af funktioner}
+\section*{Kald af funktioner}
 
 At programmere er at skabe nye måde at bruge den funktionalitet der er i computeren.
 Når man laver programmer, skrives de i programmeringssprog. 
@@ -121,7 +127,7 @@ smiley();
 
 Dette tegner en smiley på skærmen. Paranteserne efter \verb|smiley| betyder at det er en funktion vi kalder. Semikolonnet til sidst fortæller at kommandoen er slut, - semikolon i programmering minder om punktum i menneskesprog og bruges til at afslutte sætninger.
 
-\section{Skildpaddegrafik}
+\section*{Skildpaddegrafik}
 
 Skildpaddegrafik er en enkel måde man kan programmere grafik på skærmen.
 
@@ -147,6 +153,7 @@ Lange programmer bliver let uoverskuelige, og man kan komme til at gentage sig s
 Et vigtigt værktøj når man laver programmer er selv at definere funktioner, så ovenstående program kunne i stedet skrives således:
 
 % $simplesmiley2$
+\verbatiminput{../examples/simplesmiley2.js}
 
 \verb|function| er et særligt ord i programmeringssproget, der betyder at her defineres en ny funktion. De krøllede paranteser angiver starten og slutningen på det den nye funktion skal gøre. Vi kan herefter udføre al koden mellem krølleparanteserne ved blot at kalde funktionen.
 
@@ -154,7 +161,7 @@ Bemærk at navne på funktioner kun kan indeholde bogstaver, tal, samt \verb|_| 
 
 Opgave: prøv at ændre programmet så det tegner to smilies, hint: brug \verb|turtle.jump()| til at flytte skildpadden så de to smilies ikke kommer oven i hinanden.
 
-\section Funktioner
+\section*{Funktioner}
 
 
 
