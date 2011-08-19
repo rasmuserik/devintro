@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <title>Test</title>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi">
+    <link rel="apple-touch-icon-precomposed" href="icon.png" !-- 114x114px -->
+    <link rel="shortcut icon" href="icon.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        td.page { width: 500px; height: 700px;font-size:8px;}
+    </style>
+</head>
+<body>
+<script src="lib/jquery-1.6.2.min.js"></script>
+<script>
+function code(name) {
+document.write('<pre>' + $('<div>').text($.ajax({url:name + '.js', async:false}).responseText).html() + '</pre>');
+}
+</script>
+bogformat: 15x21cm
+
+Drafting of pages
+
+
+<table border=1>
+<h1>Introduktion til programmering på mobiltelefoner</h1>
+<h2>Indledning</h2>
+
+<tr><td class=page>
+<table>
+<tr><td valign=center><script>code('recursion/koch1')</script>
+<td><iframe src="runner.html#recursion/koch1" width=200 height=100></iframe>
+<tr><td valign=center><script>code('recursion/koch2')</script>
+<td><iframe src="runner.html#recursion/koch2" width=200 height=100></iframe>
+<tr><td valign=center><script>code('recursion/koch3')</script>
+<td><iframe src="runner.html#recursion/koch3" width=200 height=100></iframe>
+<tr><td valign=center><script>code('recursion/koch4')</script>
+<td><iframe src="runner.html#recursion/koch4" width=200 height=100></iframe>
+</table>
+
+<td class=page>
+<iframe src="runner.html#recursion/koch" width=400 height=400></iframe><br>
+NB: split code in two columns
+<script>code('recursion/koch')</script>
+
+<tr><td class=page>
+
+<td class=page>
+<table width=100%>
+<tr><td align=center><iframe src="runner.html#randomWalk" width=200 height=200></iframe>
+<td valign=center><script>code('randomWalk')</script>
+<tr><td align=center><iframe src="runner.html#randomWalk" width=200 height=200></iframe>
+<td><iframe src="runner.html#randomWalk" width=200 height=200></iframe>
+<tr><td align=center><iframe src="runner.html#randomWalk" width=200 height=200></iframe>
+<td><iframe src="runner.html#randomWalk" width=200 height=200></iframe>
+</table>
+
+<tr><td colspan=2>
+<h2>Reference</h2>
+<dl>
+<dt>random()</dt><dd>Tilfældigt tal mellem 0 og 1</dd>
+<dt>random(<em>n</em>)</dt><dd>Tilfældigt naturligt tal mindre end <em>n</em></dd>
+<dt>while(<em>udsagn</em>) { <em>kode</em> }</dt><dd>Gentag udførsel af <em>kode</em> så længe som <em>udsagn</em>et er opfyldt.</dd>
+<dt></dt><dd></dd>
+<dt></dt><dd></dd>
+<dt></dt><dd></dd>
+</dl>
+</table>
+
+</body>
+</html>

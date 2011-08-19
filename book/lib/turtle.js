@@ -76,7 +76,7 @@ turtle = (function() {
         }
 
         ctx.beginPath();
-        ctx.lineWidth = canvas.width / 1000;
+        ctx.lineWidth = canvas.width / 240;
         ctx.lineCap = 'round';
         for(i=0;i<lines.length;i+=2) {
             line(lines[i].x,lines[i].y, lines[i+1].x, lines[i+1].y);
