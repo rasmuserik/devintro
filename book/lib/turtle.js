@@ -38,6 +38,7 @@ turtle = (function() {
     }
 
     function jump(n) {
+        n = n || 10;
         mv(n);
         return this;
     }
@@ -58,11 +59,11 @@ turtle = (function() {
 
         scale = Math.max((maxx-minx)/canvas.width, (maxy-miny)/canvas.height);
         scale = scale && 1/scale;
-        scale *= .98
+        scale *= .90
         minx *= scale;
         miny *= scale;
-        minx -= canvas.width *.01
-        miny -= canvas.height * .01
+        minx -= canvas.width *.05
+        miny -= canvas.height * .05
 
         
         function line(x0, y0, x1, y1) {
