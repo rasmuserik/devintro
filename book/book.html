@@ -22,6 +22,9 @@ body {
     text-align: justify;
     -moz-hyphens: auto; 
 }
+@media screen {
+    body { margin-left: 2cm; }
+}
 div { margin: 0; padding: 0; }
 pre { margin: 0; padding: 0; }
 div.page {
@@ -111,13 +114,17 @@ pre {
 function include(name) {
 document.write($('<div>').text($.ajax({url:name, async:false}).responseText).html());
 };
+function code(name) {
+document.write('<pre>' + $('<div>').text($.ajax({url:'../examples/' + name + '.js', async:false}).responseText).html() + '</pre>');
+}
+function run(name, style) {
+    document.write('<iframe src="../examples/runner.html#' + name + '" style="' + style + '"></iframe>');
+}
 </script>
 
 <div class="page">
 <h1>Udvikling af apps til web og mobiltelefoner</h1>
-<hr />
 <h2>Rasmus Erik Voel Jensen</h2>
-<hr />
 </div>
 <div class="page">
 <h1>Introduktion</h1>
@@ -201,15 +208,12 @@ Herunder et lidt længere program, - prøv eventuelt om du kan se hvad det tegne
 Lange programmer bliver let uoverskuelige, og man kan komme til at gen&shy;tage sig selv.
 Et vigtigt værktøj når man laver programmer er selv at definere funktioner, så ovenstående program kunne i stedet skrives således:
 </div>
-
 <div>
 <tt>function</tt> er et særligt ord i programmeringssproget, der betyder at her defineres en ny funktion. De krøllede paranteser angiver starten og slutningen på det den nye funktion skal gøre. Vi kan herefter udføre al koden mellem krølleparanteserne ved blot at kalde funktionen.
 </div>
-
 <div>
 Bemærk at navne på funktioner kun kan indeholde bogstaver, tal, samt <tt>_</tt> og <tt>$</tt>. Når vi skrive <tt>turtle.forward()</tt>, kalder vi faktisk en <tt>forward</tt> funktion der høre til et særligt <tt>turtle</tt> objekt. Mere om dette senere.
 </div>
-
 <div>
 Opgave: prøv at ændre programmet så det tegner to smilies, hint: brug <tt>turtle.jump()</tt> til at flytte skildpadden så de to smilies ikke kommer oven i hinanden.
 </div>
@@ -217,13 +221,54 @@ Opgave: prøv at ændre programmet så det tegner to smilies, hint: brug <tt>tur
 <td style="width:1cm"></td>
 <td  valign="top" style="width:5cm"><pre><script>include('../examples/simplesmiley2.js');</script></pre></td>
 </tr></table>
+
 <hr />
+<table>
+<tr><td valign=center style="width:5cm"><script>code('koch1')</script>
+<td><script>run('koch1','width:8cm; height:5cm;border:none')</script>
+<tr><td valign=center style="width:5cm"><script>code('koch2')</script>
+<td><script>run('koch2','width:8cm; height:5cm;border:none')</script>
+<tr><td valign=center style="width:5cm"><script>code('koch3')</script>
+<td><script>run('koch3','width:8cm; height:5cm;border:none')</script>
+<!--tr><td valign=center style="width:5cm"><script>code('koch4')</script>
+<td><iframe src="../examples/runner.html#koch4" style="width:10cm; height:5cm;border:none"></iframe-->
+</table>
+
+<hr />
+<script>run('koch', 'width:15cm;height:5cm;border:none')</script>
+<table width=100%><tr>
+<td valign="top" style="width:9cm">
+rekursion yadda yadda...
+</td>
+<td style="width:1cm"></td>
+<td valign="top" style="width:5cm"> <script>code('koch')</script></td>
+</tr></table>
 
 
+<hr />
+<table width=100%><tr>
+<td><iframe src="../examples/runner.html#randomWalk" style="width:7cm;height:6cm;border:solid; border-width:.05cm"></iframe>
+<td valign=center><script>code('randomWalk')</script>
+<tr>
+<td><iframe src="../examples/runner.html#randomWalk" style="width:7cm;height:6cm;border:solid; border-width:.05cm"></iframe>
+<td><iframe src="../examples/runner.html#randomWalk" style="width:7cm;height:6cm;border:solid; border-width:.05cm"></iframe>
+<tr>
+<td><iframe src="../examples/runner.html#randomWalk" style="width:7cm;height:6cm;border:solid; border-width:.05cm"></iframe>
+<td><iframe src="../examples/runner.html#randomWalk" style="width:7cm;height:6cm;border:solid; border-width:.05cm"></iframe>
+</td></tr></table>
 
-
-
+<hr />
 <h4>Funktioner</h4>
 
- </body>
+<h1>Reference</h1>
+<dl>
+<dt><tt>random()</tt></dt><dd>Tilfældigt tal mellem 0 og 1</dd>
+<dt><tt>random(<em>n</em>)</tt></dt><dd>Tilfældigt naturligt tal mindre end <em>n</em></dd>
+<dt><tt>while(<em>udsagn</em>) { <em>kode</em> }</tt></dt><dd>Gentag udførsel af <em>kode</em> så længe som <em>udsagn</em>et er opfyldt.</dd>
+<dt></dt><dd></dd>
+<dt></dt><dd></dd>
+<dt></dt><dd></dd>
+</dl>
+
+</body>
 </html>

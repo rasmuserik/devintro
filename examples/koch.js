@@ -11,9 +11,4 @@ function koch(n) {
         koch(n-1);
    }
 }
-
-koch(6);
-turtle.right(120);
-koch(6);
-turtle.right(120);
 koch(6);

@@ -7,5 +7,5 @@ function koch3() {
     turtle.left(60);
     koch2();
 }
-
 koch3();
+
