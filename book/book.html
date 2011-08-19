@@ -1,3 +1,65 @@
+<!DOCTYPE html>
+<html lang="da">
+ <head>
+  <title>Sample page</title>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans</tt>Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+@media print {
+    hr {
+        page-break-before: always;
+        margin: 0;
+        padding: 0;
+        height: 0;
+        border: none;
+    }
+}
+body { 
+    margin:0; padding:0; width: 15cm;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 12pt;
+    line-height: 160%;
+    text-align: justify;
+    -moz-hyphens: auto; 
+}
+div { margin: 0; padding: 0; }
+pre { margin: 0; padding: 0; }
+div.page {
+    font-family: 'Droid Sans Mono', sans-serif;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 11pt;
+    padding:0cm;
+    line-height: 160%;
+    text-align: justify;
+    -moz-hyphens: auto; 
+    width: 15cm;
+    /*height: 21cm;*/
+}
+div.leftcol {
+    position: absolute;
+    width: 6cm;
+}
+div.rightcol {
+    position: relative;
+    left: 7cm;
+    width: 6cm;
+}
+div {
+    padding-bottom: 1em;
+}
+tt {
+    font-size: 10pt;
+    font-family: 'Droid Sans Mono', monospace;
+}
+pre {
+    font-size: 10pt;
+    font-family: 'Droid Sans Mono', monospace;
+}
+</style>
+
+ </head>
+
+<!--
 %# Bog
 %
 %- Introduktion
@@ -42,99 +104,78 @@
 %
 %
 %
+-->
+<body>
+ <script src="../lib/jquery-1.6.2.min.js"></script>
+<script>
+function include(name) {
+document.write($('<div>').text($.ajax({url:name, async:false}).responseText).html());
+};
+</script>
 
-\documentclass[11pt]{report} 
-\usepackage{a4} 
-\usepackage[paperwidth=15cm, paperheight=21cm]{geometry}
-\usepackage{makeidx}
-\usepackage[danish]{babel} 
-\usepackage[utf8]{inputenc}
-\usepackage{textcomp}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{graphicx} 
-\usepackage{verbatim} 
-\usepackage{fancyhdr}
-\usepackage{listings} 
-\usepackage{url}
-\frenchspacing
-\usepackage{sectsty}
-\allsectionsfont{\sffamily}
-\makeindex
-\pagestyle{plain}
-\newcommand{\Oh}[0]{ \mathcal{O} }
-\newcommand{\lang}[1]{{\index{#1}\emph{#1}}}
-\setcounter{tocdepth}{1}
-\usepackage{titlesec}
-\titlespacing*{\chapter}{0pt}{-50pt}{20pt}
-\titleformat{\chapter}[display]{\huge}{\thechapter}{20pt}{\Huge}
-
-
-\title{Udvikling af apps til web og mobiltelefoner}
-
-\author{
-  Rasmus Erik Voel Jensen\footnote{
-    rasmuserik@solsort.dk
-  }
-} 
-
-% Remember 
-%    \index terms
-%    update template as well as document when structural updates.
-%\date{\today }
-
-\begin{document}
-\sffamily
-
-\maketitle
-
-%\begin{abstract}
-%\end{abstract}
-
-\tableofcontents
-
-\chapter*{Introduktion}
-
+<div class="page">
+<h1>Udvikling af apps til web og mobiltelefoner</h1>
+<hr />
+<h2>Rasmus Erik Voel Jensen</h2>
+<hr />
+</div>
+<div class="page">
+<h1>Introduktion</h1>
+<div>
 Denne bog er en introduktion til programmering, og hvordan man kan lave programmer til web og mobiltelefoner.
-
+</div>
+<div>
 Bogen består af tre dele.
-Første del er en introduktion til programmering og grafik, som sætter os i stand til at tegne på skærmen.
+Første del er en introduktion til programme&shy;ring og grafik, som sætter os i stand til at tegne på skærmen.
 Anden del fokuserer på brugerinteraktion, det vil sige hvordan vi håndterer at brugeren trykker på knapper og lignende.
 Tredje del handler om datastrukturer og giver også flere værktøj til hvordan vi kan lave programmer.
-
+</div>
+<div>
 Den bedste måde at lære at programmere på, er ved at gøre det.
-Eksemplerne i bogen kan køres ved at gå ind på \url{http://dev.solsort.dk/}
+Eksemplerne i bogen kan køres ved at gå ind på <tt>http://dev.solsort.dk/</tt>
 og finde eller indtaste programmet, og så trykke kør.
 Prøv at byg videre og ændre i programmerne, så de opføre sig anderledes,
 eksperimentér, leg og skab. 
+</div>
+</div>
 
 
-\chapter*{Programmering og grafik}
+<div class="page">
+<h1>Programmering og grafik</h1>
+<h4>Kald af funktioner</h4>
 
-\section*{Kald af funktioner}
-
+<div>
 At programmere er at skabe nye måde at bruge den funktionalitet der er i computeren.
 Når man laver programmer, skrives de i programmeringssprog. 
 Programmeringssprog adskiller sig fra mennskesprog ved at de er langt mere stringente, - computerer kan ikke tænke, så hvis der mangler et komma eller et punktum fejler programmet.
 Sammen med programmeringssproget er der en samling af funktioner, som kan udføres/``kaldes''.
+</div>
 
-Prøv eksempelvis at gå ind på \url{http://dev.solsort.dk/} og indtast følgende program:
+<div>
+Prøv eksempelvis at gå ind på <tt>http://dev.solsort.dk/</tt> og indtast følgende program:
+</div>
 
-\begin{verbatim}
+<pre>
 smiley();
-\end{verbatim}
+</pre>
 
-Dette tegner en smiley på skærmen. Paranteserne efter \verb|smiley| betyder at det er en funktion vi kalder. Semikolonnet til sidst fortæller at kommandoen er slut, - semikolon i programmering minder om punktum i menneskesprog og bruges til at afslutte sætninger.
+<div>
+Dette tegner en smiley på skærmen. Paranteserne efter <tt>smiley</tt> betyder at det er en funktion vi kalder. Semikolonnet til sidst fortæller at kommandoen er slut, - semikolon i programmering minder om punktum i menneskesprog og bruges til at afslutte sætninger.
+</div>
 
-\section*{Skildpaddegrafik}
+<h4>Skildpaddegrafik</h4>
 
+<div>
 Skildpaddegrafik er en enkel måde man kan programmere grafik på skærmen.
+</div>
 
+<div>
 Forestil dig at du flyver og ser ned på en sandstrand hvor der kravler en skildpadde, og efter skildpadden er der et spor i sandet.
 I så fald kunne du tegne en firkant i sandet ved at få skildpadden til at gå lige frem, derefter dreje 90° grader til venstre, gå frem, til venstre, frem, venstre, frem. 
 Ved skildpaddegrafik kan man forestille sig man har en virtuel skildpadde, så følgende programkode vil tegne en firkant:
+</div>
 
+<pre>
     turtle.forward();
     turtle.left();
     turtle.forward();
@@ -142,37 +183,47 @@ Ved skildpaddegrafik kan man forestille sig man har en virtuel skildpadde, så f
     turtle.forward();
     turtle.left();
     turtle.forward();
+</pre>
 
-
+<hr />
+<table width=100%><tr>
+<td valign="top" style="width:9cm">
 Herunder et lidt længere program, - prøv eventuelt om du kan se hvad det tegner ved at håndkøre det - selv udføre programmet, måske ved at tegne på et stykke ternet papir. Prøv herefter også at få computeren til at køre det.
+</td>
+<td style="width:1cm"></td>
+<td  valign="top" style="width:5cm"><pre><script>include('../examples/simplesmiley.js');</script></pre></td>
+</tr></table>
 
-% $simplesmiley$
-\verbatiminput{../examples/simplesmiley.js}
-
-Lange programmer bliver let uoverskuelige, og man kan komme til at gentage sig selv.
+<hr />
+<table><tr>
+<td valign="top" style="width:9cm">
+<div>
+Lange programmer bliver let uoverskuelige, og man kan komme til at gen&shy;tage sig selv.
 Et vigtigt værktøj når man laver programmer er selv at definere funktioner, så ovenstående program kunne i stedet skrives således:
+</div>
 
-% $simplesmiley2$
-\verbatiminput{../examples/simplesmiley2.js}
+<div>
+<tt>function</tt> er et særligt ord i programmeringssproget, der betyder at her defineres en ny funktion. De krøllede paranteser angiver starten og slutningen på det den nye funktion skal gøre. Vi kan herefter udføre al koden mellem krølleparanteserne ved blot at kalde funktionen.
+</div>
 
-\verb|function| er et særligt ord i programmeringssproget, der betyder at her defineres en ny funktion. De krøllede paranteser angiver starten og slutningen på det den nye funktion skal gøre. Vi kan herefter udføre al koden mellem krølleparanteserne ved blot at kalde funktionen.
+<div>
+Bemærk at navne på funktioner kun kan indeholde bogstaver, tal, samt <tt>_</tt> og <tt>$</tt>. Når vi skrive <tt>turtle.forward()</tt>, kalder vi faktisk en <tt>forward</tt> funktion der høre til et særligt <tt>turtle</tt> objekt. Mere om dette senere.
+</div>
 
-Bemærk at navne på funktioner kun kan indeholde bogstaver, tal, samt \verb|_| og \verb|$|. Når vi skrive \verb|turtle.forward()|, kalder vi faktisk en \verb|forward| funktion der høre til et særligt \verb|turtle| objekt. Mere om dette senere.
+<div>
+Opgave: prøv at ændre programmet så det tegner to smilies, hint: brug <tt>turtle.jump()</tt> til at flytte skildpadden så de to smilies ikke kommer oven i hinanden.
+</div>
+</td>
+<td style="width:1cm"></td>
+<td  valign="top" style="width:5cm"><pre><script>include('../examples/simplesmiley2.js');</script></pre></td>
+</tr></table>
+<hr />
 
-Opgave: prøv at ændre programmet så det tegner to smilies, hint: brug \verb|turtle.jump()| til at flytte skildpadden så de to smilies ikke kommer oven i hinanden.
-
-\section*{Funktioner}
 
 
 
 
+<h4>Funktioner</h4>
 
-\newpage
-
-\appendix
-
-\addcontentsline{toc}{chapter}{Indeks}
-\printindex
-
-\end{document}
-
+ </body>
+</html>
