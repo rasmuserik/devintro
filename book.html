@@ -26,7 +26,7 @@ body {
     body { margin-left: 2cm; }
 }
 div { margin: 0; padding: 0; }
-pre { margin: 0; padding: 0; }
+pre { margin: 0; padding: 0; line-height: 140% }
 div.page {
     font-family: 'Droid Sans Mono', sans-serif;
     font-family: 'Droid Sans', sans-serif;
@@ -55,7 +55,6 @@ tt {
     font-family: 'Droid Sans Mono', monospace;
 }
 pre {
-    font-size: 10pt;
     font-family: 'Droid Sans Mono', monospace;
 }
 </style>
@@ -83,7 +82,7 @@ function run(name, style) {
 <ul>
 <li>Introduktion</li>
 <li>Programmering og grafik<ul>
-    <li>Kald af funktioner • Skildpaddegrafik • Definition af funktioner • ...</li>
+    <li>Kald af funktioner • Skildpaddegrafik • Definition af funktioner • Bitmapgrafik • ...</li>
     <li>Smiley • Koch-kurver • Random walk • Planter • ...</li>
 </ul></li>
 <li>Brugerinteraktion<ul>
@@ -166,10 +165,9 @@ eksperimentér, leg og skab.
 </div>
 
 
-<div class="page">
+<hr />
 <h1>Programmering og grafik</h1>
-<h4>Kald af funktioner</h4>
-
+<h2>Kald af funktioner</h2>
 <div>
 At programmere er at skabe nye måde at bruge den funktionalitet der er i computeren.
 Når man laver programmer, skrives de i programmeringssprog. 
@@ -189,7 +187,8 @@ smiley();
 Dette tegner en smiley på skærmen. Paranteserne efter <tt>smiley</tt> betyder at det er en funktion vi kalder. Semikolonnet til sidst fortæller at kommandoen er slut, - semikolon i programmering minder om punktum i menneskesprog og bruges til at afslutte sætninger.
 </div>
 
-<h4>Skildpaddegrafik</h4>
+<hr />
+<h2>Skildpaddegrafik</h2>
 
 <div>
 Skildpaddegrafik er en enkel måde man kan programmere grafik på skærmen.
@@ -221,6 +220,7 @@ Herunder et lidt længere program, - prøv eventuelt om du kan se hvad det tegne
 </tr></table>
 
 <hr />
+<h2>Funktioner</h2>
 <table><tr>
 <td valign="top" style="width:9cm">
 <div>
@@ -249,8 +249,8 @@ Opgave: prøv at ændre programmet så det tegner to smilies, hint: brug <tt>tur
 <td><script>run('koch2','width:8cm; height:5cm;border:none')</script>
 <tr><td valign=center style="width:5cm"><script>code('koch3')</script>
 <td><script>run('koch3','width:8cm; height:5cm;border:none')</script>
-<!--tr><td valign=center style="width:5cm"><script>code('koch4')</script>
-<td><iframe src="examples/runner.html#koch4" style="width:10cm; height:5cm;border:none"></iframe-->
+<!--tr><td valign=center style="width:5cm"><script>code('koch2')</script>
+<td><iframe src="examples/runner.html#koch2" style="width:10cm; height:5cm;border:none"></iframe-->
 </table>
 
 <hr />
@@ -266,23 +266,63 @@ rekursion yadda yadda...
 
 <hr />
 <table width=100%><tr>
-<td><iframe src="examples/runner.html#randomWalk" style="width:7cm;height:6cm;border:solid; border-width:.05cm"></iframe>
+<td><script>run('randomWalk', 'margin:.5cm; width:6cm;height:6cm;border:solid; border-width:.05cm')</script>
 <td valign=center><script>code('randomWalk')</script>
 <tr>
-<td><iframe src="examples/runner.html#randomWalk" style="width:7cm;height:6cm;border:solid; border-width:.05cm"></iframe>
-<td><iframe src="examples/runner.html#randomWalk" style="width:7cm;height:6cm;border:solid; border-width:.05cm"></iframe>
+<td><script>run('randomWalk', 'margin:.5cm; width:6cm;height:6cm;border:solid; border-width:.05cm')</script>
+<td><script>run('randomWalk', 'margin:.5cm; width:6cm;height:6cm;border:solid; border-width:.05cm')</script>
 <tr>
-<td><iframe src="examples/runner.html#randomWalk" style="width:7cm;height:6cm;border:solid; border-width:.05cm"></iframe>
-<td><iframe src="examples/runner.html#randomWalk" style="width:7cm;height:6cm;border:solid; border-width:.05cm"></iframe>
+<td><script>run('randomWalk', 'margin:.5cm; width:6cm;height:6cm;border:solid; border-width:.05cm')</script>
+<td><script>run('randomWalk', 'margin:.5cm; width:6cm;height:6cm;border:solid; border-width:.05cm')</script>
 </td></tr></table>
 
 <hr />
-<h4>Funktioner</h4>
+<table width=100%>
+<tr>
+<td><script>run('plant', 'width:7cm;height:7cm;border:none')</script>
+<td><script>run('plant', 'width:7cm;height:7cm;border:none')</script>
+<tr>
+<td valign=center style="font-size: 9pt;"><script>code('plant')</script>
+<td>
+<table>
+<tr><td><script>run('plant', 'width:3.5cm;height:3.5cm;border:none')</script>
+    <td><script>run('plant', 'width:3.5cm;height:3.5cm;border:none')</script></tr>
+<tr><td><script>run('plant', 'width:3.5cm;height:3.5cm;border:none')</script>
+    <td><script>run('plant', 'width:3.5cm;height:3.5cm;border:none')</script></tr>
+</table>
+<tr>
+<td><script>run('plant', 'width:7cm;height:7cm;border:none')</script>
+<td><script>run('plant', 'width:7cm;height:7cm;border:none')</script>
+</td></tr></table>
 
+<hr />
+<script>run('polygon', 'width:15cm;height:5cm;border:none')</script>
+<table>
+<tr><td valign=top>
+blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+</td><td style="width:1cm"></td>
+<td valign="top" style="font-size: 9pt"><script>code('polygon')</script>
+</table>
+
+<hr />
+<table>
+<tr><td valign=top>
+blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+</td><td style="width:1cm"></td>
+<td valign=top style="font-size: 8pt;"><script>code('clock');run('clock','width:8cm; height:8cm;border:none');</script>
+</table>
+
+<hr />
 <h1>Reference</h1>
 <dl>
-<dt><tt>random()</tt></dt><dd>Tilfældigt tal mellem 0 og 1</dd>
-<dt><tt>random(<em>n</em>)</tt></dt><dd>Tilfældigt naturligt tal mindre end <em>n</em></dd>
+<dt><tt>Math.random()</tt></dt><dd>Tilfældigt tal mellem 0 og 1.</dd>
+<dt><tt>turtle.forward(<em>længde</em>)</tt></dt><dd>Tegn et linjestykke fremad med skildpadden. Linjestykkets <em>længde</em> er 10, hvis det ikke angives.</dd>
+<dt><tt>turtle.jump(<em>længde</em>)</tt></dt><dd>Flyt skildpadden fremad uden at tegne. Hvis <em>længde</em> ikke angives flyttes den 10.</dd>
+<dt><tt>turtle.left(<em>vinkel</em>)</tt></dt><dd>Drej skildpadden til venstre, enten 90° eller en angivet <em>vinkel</em>.</dd>
+<dt><tt>turtle.rememberPosition()</tt></dt><dd>Husk skildpaddens position, - for senere gendannelse med <tt>turtle.restorePosition()</tt>.</dd>
+<dt><tt>turtle.restorePosition()</tt></dt><dd>Flyt skildpadden tilbage til en tidliger husket position.</dd>
+<dt><tt>turtle.right(<em>vinkel</em>)</tt></dt><dd>Drej skildpadden til højre, enten 90° eller en angivet <em>vinkel</em>.</dd>
+<dt><tt>random(<em>n</em>)</tt></dt><dd>Tilfældigt naturligt tal mindre end <em>n</em>.</dd>
 <dt><tt>while(<em>udsagn</em>) { <em>kode</em> }</tt></dt><dd>Gentag udførsel af <em>kode</em> så længe som <em>udsagn</em>et er opfyldt.</dd>
 <dt></dt><dd></dd>
 <dt></dt><dd></dd>

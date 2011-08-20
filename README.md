@@ -7,7 +7,7 @@ TODO:
   - Editor: https://github.com/ajaxorg/ace
   - Canvas with output
   - Commandline/console: http://www.squarefree.com/shell/shell.html
-  - Menubar: run, save, reset environment, layout(portrait/landscape), publish
+  - Menubar: run, save, reset environment, lint, layout(portrait/landscape), publish
 - Mobile app for running created applications
 - Courses
   - Regular mixed-level lab
