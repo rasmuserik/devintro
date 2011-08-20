@@ -51,7 +51,7 @@ div {
     padding-bottom: 1em;
 }
 tt {
-    font-size: 10pt;
+    font-size: 11pt;
     font-family: 'Droid Sans Mono', monospace;
 }
 pre {
@@ -314,6 +314,38 @@ document.write('<br><center><tt>spiral(' + a + ', ' + b + ');</tt></center>');
 <td><script>spir(100, 200, 4.5)</script>
 <td colspan=2 style="font-size: 14pt;"><script>code('spiral')</script>
 </table>
+
+<hr />
+<script>function spiroBook(a, b) {
+document.write('<td>');
+run('spiro&spiro('+a+','+b+')', 'margin-top:.4cm;border:none;width:3.5cm; height:3.5cm;') 
+document.write('<br><div style="text-align:center;"><tt style="font-size:10pt;">spiro(' + a + ',' + b + ');</tt></div>');
+}
+</script>
+
+<hr/>
+<table>
+<tr>
+<script>spiroBook(90,100)</script>
+<script>spiroBook(30,100)</script>
+<script>spiroBook(10,100)</script>
+<script>spiroBook(1,1000)</script>
+<tr>
+<script>spiroBook(90.01,500)</script>
+<script>spiroBook(100, 100)</script>
+<script>spiroBook(.01,2000);</script>
+<script>spiroBook(60,100)</script>
+<tr>
+<script>spiroBook(90.1,1000)</script>
+<td colspan=2 valign=top align=center><table style="padding:.2cm;border:solid;border-width:0.05cm"><td><pre style="font-size:10pt"><script>include('examples/spiro.js');</script></pre></table></td>
+<script>spiroBook(11.9,5000)</script>
+<tr>
+<script>spiroBook(91,1000)</script>
+<script>spiroBook(1.1,5000)</script>
+<script>spiroBook(1.4,5000)</script>
+<script>spiroBook(89.6,800)</script>
+</table>
+
 
 <hr />
 <script>run('polygon', 'width:15cm;height:5cm;border:none')</script>
