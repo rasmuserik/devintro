@@ -1,3 +1,4 @@
+![logo](https://solsort.com/_logo.png)
 # Teaching material about development for web and mobile phones
 
 TODO:
